@@ -9,7 +9,7 @@ God.watch do |w|
 	w.uid = "sbel"
 	w.dir = RAILS_ROOT
 
-	w.start = "#{RAKE} -f #{RAILS_ROOT}/Rakefile solr:start" 
+	w.start = "rm #{RAILS_ROOT}/solr/production/index/*lock; #{RAKE} -f #{RAILS_ROOT}/Rakefile solr:start" 
 	w.stop = "#{RAKE} -f #{RAILS_ROOT}/Rakefile solr:stop" 
 	w.pid_file = "#{RAILS_ROOT}/tmp/pids/production_pid"
 	w.log = "#{RAILS_ROOT}/log/god_solr.log"
